@@ -1,0 +1,44 @@
+
+<div class="d-flex flex-row col-12">
+  {{!-- card1 --}}
+      <div class="d-flex flex-column col-8">
+    {{!-- chart1 --}}
+        <div class="card border-0 mt-5 ms-5"> 
+          <div class="card-body d-flex justify-content-center">
+            <canvas
+              id="incomePie"
+              style="width: 60%;"
+            ></canvas>
+          </div>
+        </div>
+   {{!-- chart2 --}}
+        <div class="card border-0 ms-5 my-5 mt-3">
+          <div class="card-body d-flex justify-content-center">
+            <canvas
+              id="expensePie"
+              style="width: 100%; max-width: 600px"
+            ></canvas>
+           </div>
+          </div>
+        </div>
+    {{!-- card2 --}}
+  
+      <div class="d-flex flex-column col-4">
+        {{!-- chart3 --}}
+        <div class="card bg-warning-subtle border-0 m-5 pb-5">
+           <div class="card-body h-100">  
+             <div class="card-title fs-3">Insights</div>         
+              <p>(1) Your total monthly income of the month is USD <span class="totalExpense"> </span> </p>
+              <p>(2) Your total monthly expense of the month is USD <span class="totalRevenue"></span></p>
+              <p> Click "Ready Go!" to do the process again to train your brain muscle</p>
+           {{!-- <a class="btn btn-primary" href="/items" id="goBack-btn" style="height:10%"> Go Back to Items</a> --}}
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <script src="/js/analysis.js"></script>
+
+
