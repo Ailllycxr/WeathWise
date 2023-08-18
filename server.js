@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const hours = 24;
 const sessionConfig = {
-  secret: process.env.SECRET,
+  secret: "Super secret secret",
   resave: false,
   saveUninitialized: false,
   cookie: {
