@@ -77,6 +77,14 @@ cconst createUsersIncomes = async () => {
 }
 ```
 
+## Project front page
+
+![frontpage](./public/images/frontpage.png)
+
+## Project deployed link
+
+https://weathwise-fdcd16b2c8c7.herokuapp.com
+
 ## Installation
 
 Please make sure to install all packages before running the code if needed.
@@ -103,7 +111,8 @@ Click the blue button to get to a analysis snapshot.
 
 ## Author Info
 
-### Xiaoran Cai 
+### Xiaoran Cai
+
 ### people who love programming
 
 ## Credits
