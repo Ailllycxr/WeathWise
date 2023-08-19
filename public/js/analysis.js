@@ -58,7 +58,7 @@ const renderIncomePie= async(user_id)=> {
   const chartRevenueData = await getIncomeItems(user_id)
 
   const totalRevenue = document.querySelector(".totalRevenue");
-  console.log(chartRevenueData.total)
+  console.log(chartRevenueData)
   totalRevenue.textContent=chartRevenueData.total
 
   const labels = chartRevenueData.revenueCategoryArray

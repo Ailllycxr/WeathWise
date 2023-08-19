@@ -53,13 +53,11 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
     const userData = await User.findOne({
       where: {
         [Op.or]: [{ email: req.body.user }, { username: req.body.user }],
       },
     });
-    console.log(userData);
     if (!userData) {
       res
         .status(404)

@@ -47,13 +47,16 @@ router.get("/:user", useAuth, async (req, res) => {
       return;
   }
   const expenseUserData = findExpense.map(expense => expense.get({plain : true}));
-  
+
   const mapExpense =new Map ()
   for (const eachExpense of expenseUserData) {
-      if (mapExpense.has(eachExpense.category)) {
-        mapExpense.set(eachExpense.category,mapExpense.get(eachExpense.category)+eachExpense.amount)
+        const eachExpenseNum = parseFloat(eachExpense.amount)
+        console.log(eachExpense.amount)
+        console.log(typeof(eachExpenseNum))
+      if (mapExpense.has(eachExpense.category)) {  
+        mapExpense.set(eachExpense.category,mapExpense.get(eachExpense.category)+eachExpenseNum)
       } else {
-        mapExpense.set (eachExpense.category,eachExpense.amount)
+        mapExpense.set (eachExpense.category,eachExpenseNum)
 
       }
   }
@@ -65,7 +68,7 @@ router.get("/:user", useAuth, async (req, res) => {
           }
           
           const expenseArray  = []
-          const expense= mapExpense.values()
+          const expense = mapExpense.values()
           for (const amount of expense){
               expenseArray.push(amount)
           }
@@ -73,8 +76,7 @@ router.get("/:user", useAuth, async (req, res) => {
          
           const total = expenseArray.reduce((a,c)=> a+c)
           const expenseArrayPer = expenseArray.map ((amount) =>(amount/total))
-          
-          console.log(expenseArrayPer)
+     
 
           let responseExpenseData = {
             expenseUserData:expenseUserData,
@@ -82,7 +84,6 @@ router.get("/:user", useAuth, async (req, res) => {
             expenseArrayPer:expenseArrayPer,
             total:total
         }
-        console.log(responseExpenseData)
         
     res.json(responseExpenseData);
   } catch (err) {

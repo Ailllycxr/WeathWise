@@ -58,10 +58,11 @@ router.get('/:user', useAuth, async (req, res) => {
         // Group by Category (guidance from TAs)
         const mapIncome =new Map ()
         for (const eachIncome of incomeUserData) {
+            const eachIncomeNum = parseFloat(eachIncome.amount)
             if (mapIncome.has(eachIncome.category)) {
-                mapIncome.set(eachIncome.category,mapIncome.get(eachIncome.category)+eachIncome.amount)
+                mapIncome.set(eachIncome.category,mapIncome.get(eachIncome.category)+eachIncomeNum)
             } else {
-                mapIncome.set (eachIncome.category,eachIncome.amount)
+                mapIncome.set (eachIncome.category,eachIncomeNum)
 
             }
         }

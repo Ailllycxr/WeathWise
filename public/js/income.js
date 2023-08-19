@@ -107,7 +107,7 @@ const deleteIncomeFromDb = async (id) => {
     incomeResult.textContent = "Deleted Income Item.";
     incomeResult.style.color = "green";
   } else {
-    console.log(response);
+
     incomeResult.textContent = response.statusText;
     incomeResult.style.color = "red";
   }

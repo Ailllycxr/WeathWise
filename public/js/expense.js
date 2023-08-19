@@ -118,7 +118,7 @@ const deleteExpenseFromDb = async (id) => {
     expenseResult.textContent = "Deleted Expense Item.";
     expenseResult.style.color = "green";
   } else {
-    console.log(response);
+
     expenseResult.textContent = response.statusText;
     expenseResult.style.color = "red";
   }
