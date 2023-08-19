@@ -88,6 +88,7 @@ const renderExpensePie= async(user_id)=> {
     const chartDataExpense = await getExpenseItems(user_id)
     const totalExpense = document.querySelector(".totalExpense");
     totalExpense.textContent=chartDataExpense.total
+    console.log(totalExpense)
     const labels =chartDataExpense.expenseCategoryArray
     const values = chartDataExpense.expenseArrayPer;
     new Chart(expensePie, {
